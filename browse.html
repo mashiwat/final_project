@@ -14,7 +14,7 @@
 
         <div class="w-1/5 py-2 text-right">
             <div class="block">Hello, User</div>
-            <div class="block underline font-semibold">Sign Out</div>
+            <div class="sign-in-or-sign-out block underline font-semibold">Sign Out</div>
         </div>
     </div>
 
@@ -102,5 +102,25 @@
   
     </div>
 
+  <!-- Put the Firebase config here -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {    
+    apiKey: "AIzaSyDB8oa6_J3vs2TmB8Bryuaymo4LCStHxLk",
+    authDomain: "kiei-451-a3489.firebaseapp.com",
+    projectId: "kiei-451-a3489",
+    storageBucket: "kiei-451-a3489.appspot.com",
+    messagingSenderId: "405088608576",
+    appId: "1:405088608576:web:756a8bf8cf98e676381aa5"} // replace
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="browse.js"></script>
 </body>
 </html>
