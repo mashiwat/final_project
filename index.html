@@ -10,8 +10,18 @@
 </head>
 
 <body>
-  <div class="sign-in-or-sign-out"></div>
- 
+  <div class="py-8 md:px-32 px-0 md:w-1/2 w-full mx-auto">
+  <div class="flex items-center">
+    <div class="md:mx-0 mx-4"><span class="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Welcome to Furniture Swap!</span></div>
+    <div class="ml-auto text-sm sign-in-or-sign-out"></div>
+  </div>
+  
+   <!-- enter some example furniture picture?  -->
+  <div class="furniturepics">
+   
+  </div>
+
+</div>
   <!-- Put the Firebase config here -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
@@ -21,7 +31,13 @@
 
   <script>
     // Your web app's Firebase configuration
-    var firebaseConfig = {} // replace
+    var firebaseConfig = {    
+    apiKey: "AIzaSyDB8oa6_J3vs2TmB8Bryuaymo4LCStHxLk",
+    authDomain: "kiei-451-a3489.firebaseapp.com",
+    projectId: "kiei-451-a3489",
+    storageBucket: "kiei-451-a3489.appspot.com",
+    messagingSenderId: "405088608576",
+    appId: "1:405088608576:web:756a8bf8cf98e676381aa5"} // replace
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
