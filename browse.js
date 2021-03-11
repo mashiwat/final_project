@@ -10,10 +10,13 @@ firebase.auth().onAuthStateChanged(async function(user) {
         firebase.auth().signOut()
         document.location.href = 'browse.html'
       })
-      //render old furniture
-      let furniture = await Response.json()
-      renderFurniture(furniture)
-
+      //render furniture from firestore
+      let response = await fetch('/.netlify/functions/get_furniture')
+      let furnitures = await response.json()
+      for (let i=0; i<furnitures.length;i++){
+        let furniture = furnitures[i]
+        renderFurniture(furniture)
+      }
     } else {
       // Signed out
       console.log('signed out')
