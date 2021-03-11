@@ -40,8 +40,8 @@ firebase.auth().onAuthStateChanged(async function(user) {
   })
   async function renderFurniture(furniture) {
       let furnitureId = furniture.id
-      document.querySelector('.furniture').insertAdjacentHTML('beforeend', `
-      <div class="bg-white rounded-xl border-2 border-blue-400 pb-4">
+      document.querySelector('.furnitures').insertAdjacentHTML('beforeend', `
+      <div class="post-${furnitureId} bg-white rounded-xl border-2 border-blue-400 pb-4">
       <img src="${furniture.link}" class="block p-4">
       <p class="block font-semibold px-6">${furniture.productName}</p>
       <p class="block px-6 py-2">${furniture.price}</p>
