@@ -34,7 +34,8 @@ firebase.auth().onAuthStateChanged(async function(user) {
             productName: productText,
             price: priceText,
             link: imageText,
-            userId: user.uid
+            userId: user.uid,
+            useremail: user.email
           })
         }
         document.location.href = 'browse.html'

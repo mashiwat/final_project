@@ -55,6 +55,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
           event.preventDefault()
           console.log (`.furniture-${furnitureId} was clicked by ${user.uid}`)
          await db.collection('interested').add({
+           owneremail: furnitureData.useremail,
            productID: furnitureId,
            productName: furnitureData.productName,
            productImage: furnitureData.link,
