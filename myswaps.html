@@ -1,18 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture Swap</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
+</head>
 
+<body class="m-8 bg-gray-200">
 
+  <div class="flex my-4 p-4 text-black border-b-2 border-blue-800">
 
+    <h1 class="w-4/5 py-2 text-left text-5xl font-bold">FURNITURE SWAP</h1>
 
+    <div class="w-1/5 py-2 text-right">
+        <div class="block">Hello, User</div>
+        <div class="sign-in-or-sign-out block underline font-semibold"></div>
+    </div>
+  </div>
 
-
-
-
-
-
-
-
-
-
+  <div class="space-x-4 my-4 px-4 py-4 text-2xl text-white">
+      <button type="button" class="inline font-semibold bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-900 hover:to-blue-700 px-4 py-4 rounded-xl border-2 border-blue-900 shadow-md"><a href="browse.html">BROWSE</a></button>
+      <button type="button" class="inline font-semibold bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-900 hover:to-blue-700 px-4 py-4 rounded-xl border-2 border-blue-900 shadow-md"><a href="upload.html">UPLOAD</a></button>
+      <button type ="button" class="inline font-semibold bg-gradient-to-r from-blue-900 to-blue-700 px-4 py-4 rounded-xl border-2 border-blue-900 shadow-md"><a href="myswaps.html">MY SWAPS</a></button>
+  </div>
 
 
  <!-- Put the Firebase config here -->
@@ -34,3 +47,7 @@
    firebase.initializeApp(firebaseConfig);
  </script>
  <script src="myswaps.js"></script>
+
+</body>
+
+</html>
