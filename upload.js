@@ -48,7 +48,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
       // Signed out
       console.log('signed out')
       //Hide browse capabilties
-      document.querySelector
+      document.querySelector('stack').classList.add('hidden')
   
       // Initializes FirebaseUI Auth
       let ui = new firebaseui.auth.AuthUI(firebase.auth())
