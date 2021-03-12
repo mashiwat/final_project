@@ -15,8 +15,8 @@
 
     <h1 class="w-4/5 py-2 text-left text-5xl font-bold">FURNITURE SWAP</h1>
 
-    <div class="w-1/5 py-2 text-right">
-        <div class="block">Hello, User</div>
+    <div class="hello w-1/5 py-2 text-right">
+        <!-- <div class="block">Hello, User</div> -->
         <div class="sign-in-or-sign-out block underline font-semibold"></div>
     </div>
   </div>
@@ -40,7 +40,7 @@
 
         <p class="w-1/2 inline-block align-middle">1. What type of furniture is it?</p>
         <form class="inline-block place-items-end">
-          <input type="text" id="image-url" name="image-url" placeholder="Table" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+          <input type="text" id="productName" name="productName" placeholder="Table" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-blue-500 focus:border-blue-500">
         </form>
       </div>
 
@@ -48,7 +48,7 @@
 
         <p class="w-1/2 inline-block align-middle">2. How much is your furniture worth?</p>
         <form class="inline-block place-items-end">
-          <input type="text" id="image-url" name="image-url" placeholder="$75" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+          <input type="text" id="price" name="price" placeholder="$75" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-blue-500 focus:border-blue-500">
         </form>
       </div>
 
@@ -56,12 +56,12 @@
 
         <p class="w-1/2 inline-block align-middle">3. Insert your furniture's image URL</p>
         <form class="inline-block place-items-end">
-          <input type="text" id="image-url" name="image-url" placeholder="Image URL" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+          <input type="text" id="link" name="link" placeholder="Image URL" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-blue-500 focus:border-blue-500">
         </form>
       </div>
 
       <div class="w-1/3">
-        <button id="upload_button" class="inline-block font-semibold text-white px-4 py-2 bg-blue-800 rounded-xl shadow-md">UPLOAD!</button>
+        <button class="upload_button inline-block font-semibold text-white px-4 py-2 bg-blue-800 rounded-xl shadow-md">UPLOAD!</button>
       </div>
 
 
@@ -71,7 +71,9 @@
   
 
   <!-- Put the Firebase config here -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
   <!-- Firebase Auth -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
