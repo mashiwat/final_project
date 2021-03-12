@@ -40,7 +40,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
             <img src="${interestedImage}" class="block p-4">
             <p class="block px-6 py-2">${interestedProduct}</p>
             <p class="block px-6 py-2">${interestedPrice}</p>
-            <p class="block px-6 py-2">Requested from: ${interestedowner}</p>
+            <p class="block px-6 py-2">Owner: ${interestedowner}</p>
             </div>`)
           }
           if (interestedowner == user.email){
