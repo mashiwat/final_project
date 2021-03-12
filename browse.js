@@ -73,7 +73,9 @@ firebase.auth().onAuthStateChanged(async function(user) {
       // Signed out
       console.log('signed out')
       //Hide browse capabilties
-      document.querySelector
+      document.querySelector('.signed-out-message').insertAdjacentHTML('beforeend', `
+      <p class="w-4/5 text-left text-2xl font-bold">Welcome to Furniture Swap. Login to explore furniture available to swap and upload furniture to swap!</p>
+      `)
   
       // Initializes FirebaseUI Auth
       let ui = new firebaseui.auth.AuthUI(firebase.auth())
