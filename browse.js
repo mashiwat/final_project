@@ -47,15 +47,24 @@ firebase.auth().onAuthStateChanged(async function(user) {
         <img src="${furnitureImage}" class="block p-4">
         <p class="block font-semibold px-6">${furnitureName}</p>
         <p class="block px-6 py-2">${furniturePrice}</p>
-        <button class="furniture-${furnitureId} inline-block font-semibold text-white mx-4 px-4 py-2 bg-blue-800 rounded-xl">Add to interest list</button>
+        <button class="furniture-${furnitureId}-${user.uid} inline-block font-semibold text-white mx-4 px-4 py-2 bg-blue-800 rounded-xl">Add to interest list</button>
         </div>
         `)
 
-        document.querySelector(`.furniture-${furnitureId}`).addEventListener('click', async function(event) {
+        document.querySelector(`.furniture-${furnitureId}-${user.uid}`).addEventListener('click', async function(event) {
           event.preventDefault()
           console.log (`.furniture-${furnitureId} was clicked by ${user.uid}`)
-         
+         await db.collection('interested').add({
+           productID: furnitureId,
+           productName: furnitureData.productName,
+           productImage: furnitureData.link,
+           productPrice: furnitureData.price,
+           requestoremail: user.email,
+           userId: user.uid
+         })
         })
+      
+
 
       }
 

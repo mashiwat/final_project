@@ -21,6 +21,17 @@ firebase.auth().onAuthStateChanged(async function(user) {
       document.querySelector('.hello').insertAdjacentHTML('beforeend', `
       <div class="block">Hello, ${user.displayName}</div>
       `)
+    
+      let interested = await db.collection('interested').get()
+     // let interested = querySnapshot.docs
+
+    document.querySelector('.userspecificrequests').insertAdjacentHTML('beforeend', `
+    <div class="bg-white rounded-xl border-2 border-blue-400 pb-4">
+    <img src="${interested.productImage}" class="block p-4">
+    <p class="block px-6 py-2">${interested.productName}</p>
+    <p class="block px-6 py-2">${interested.productPrice}</p>
+    </div>`)
+
     } else {
       // Signed out
       console.log('signed out')
