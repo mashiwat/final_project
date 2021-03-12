@@ -37,6 +37,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
             userId: user.uid
           })
         }
+        document.location.href = 'browse.html'
         })
         
     
