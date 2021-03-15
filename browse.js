@@ -71,6 +71,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
            requestoremail: user.email,
            userId: user.uid
          })
+         document.location.href = 'myswaps.html'
         })
 
     }
