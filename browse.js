@@ -41,7 +41,12 @@ firebase.auth().onAuthStateChanged(async function(user) {
         let furniturePrice = furnitureData.price
         let furnitureName = furnitureData.productName
         let furnitureImage = furnitureData.link
+        let furnitureUser = furnitureData.userId    
 
+        if(furnitureUser == user.uid){
+        }
+
+        else{
         document.querySelector('.furnitures').insertAdjacentHTML('beforeend', `
         <div class="bg-white rounded-xl border-2 border-blue-400 pb-4">
         <img src="${furnitureImage}" class="block p-4">
@@ -50,6 +55,9 @@ firebase.auth().onAuthStateChanged(async function(user) {
         <button class="furniture-${furnitureId}-${user.uid} inline-block font-semibold text-white mx-4 px-4 py-2 bg-blue-800 rounded-xl">Add to interest list</button>
         </div>
         `)
+
+
+
 
         document.querySelector(`.furniture-${furnitureId}-${user.uid}`).addEventListener('click', async function(event) {
           event.preventDefault()
@@ -64,9 +72,8 @@ firebase.auth().onAuthStateChanged(async function(user) {
            userId: user.uid
          })
         })
-      
 
-
+    }
       }
 
     } else {

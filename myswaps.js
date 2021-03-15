@@ -41,7 +41,15 @@ firebase.auth().onAuthStateChanged(async function(user) {
             <p class="block px-6 py-2">${interestedProduct}</p>
             <p class="block px-6 py-2">${interestedPrice}</p>
             <p class="block px-6 py-2">Owner: ${interestedowner}</p>
+            <button class="delete_request block mx-4 font-semibold text-white px-4 py-2 bg-red-700 rounded-xl shadow-md">Delete</button>
             </div>`)
+
+            document.querySelector('.delete_request').addEventListener('click', async function(event) {
+              event.preventDefault()
+                await db.collection('interested').doc(interestedId).delete()
+              document.location.href = 'myswaps.html'
+              })
+            
           }
           if (interestedowner == user.email){
             document.querySelector('.requestsreceived').insertAdjacentHTML('beforeend', `
@@ -53,6 +61,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
             </div>`)
           }
          
+
       }  
 
     } else {
