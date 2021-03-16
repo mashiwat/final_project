@@ -10,17 +10,25 @@ exports.handler = async function(event) {
 
 
 //loop through firebase data collection furniture
-  for (let i=0; i<furnitures.length; i++) {
-    let furnitureId = furnitures[i].id
-    let furnitureData = furnitures[i].data()
+for (let i=0; i<furnitures.length; i++) {
+  
+  let furnitureId = furnitures[i].id
+  let furnitureData = furnitures[i].data()
+  let furniturePrice = furnitureData.price
+  let furnitureName = furnitureData.productName
+  let furnitureImage = furnitureData.link
+  let furnitureUser = furnitureData.userId  
+  let furnitureUseremail = furnitureData.useremail  
   
 
   //add new furniture
   furnituresData.push({
     id: furnitureId,
-    imageUrl: furnitureData.link,
-    product: furnitureData.productName,
-    username: furnitureData.username
+    imageUrl: furnitureImage,
+    price: furniturePrice,
+    product: furnitureName,
+    username: furnitureUser,
+    useremail: furnitureUseremail
   })
 }
   return {
